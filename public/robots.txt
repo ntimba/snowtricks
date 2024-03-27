@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /app/
+Disallow: /src/
+Disallow: /vendor/
+Disallow: /var/
+Disallow: /bin/
+Disallow: /config/
+Disallow: /tmp/
+Disallow: /tests/
+Disallow: /translations/
+Disallow: /uploads/
+Disallow: /cache/
+Disallow: /*.php$
+

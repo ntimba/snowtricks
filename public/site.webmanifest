@@ -1,0 +1,15 @@
+{
+    "name": "Snowboard Tricks",
+    "short_name": "Snowtricks",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ebebea",
+    "description": "Snowtricks est un site web collaboratif dédié à la promotion et à l'apprentissage du snowboard. Son objectif est d'introduire ce sport au grand public et de faciliter l'apprentissage des tricks de snowboard. La plateforme permet aux utilisateurs de partager leurs expériences, conseils et astuces pour aider d'autres passionnés et débutants à progresser dans ce sport.",
+    "icons": [
+      {
+        "src": "public/images/snowtricks.png",
+        "sizes": "519x519",
+        "type": "image/png"
+      }
+    ]
+}

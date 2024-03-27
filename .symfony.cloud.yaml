@@ -1,0 +1,10 @@
+# .symfony.cloud.yaml
+pre_composer_script: |
+  echo "Commandes à exécuter avant l'installation de Composer"
+  # Exemple : Copier un fichier .env.example vers .env
+  cp .env.example .env
+
+post_composer_script: |
+  echo "Commandes à exécuter après l'installation de Composer"
+  # Exemple : Nettoyage ou migrations
+  php bin/console doctrine:migrations:migrate --no-interaction

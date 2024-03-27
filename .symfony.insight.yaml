@@ -1,0 +1,39 @@
+# .symfony.insight.yaml
+project:
+  exclude_paths:
+    - "var/"
+    - "tests/"
+    - "vendor/"
+    - "node_modules/"
+  language: php
+  version: 8.2
+
+php:
+  extensions:
+    - pdo_mysql
+    - json
+    - curl
+    - intl
+  configuration:
+    memory_limit: 512M
+
+services:
+  mysql: true
+  postgresql: false
+  mongodb: false
+  redis: false
+  elasticsearch: false
+
+checks:
+  security:
+    enabled: true
+  doctrine:
+    enabled: true
+  twig:
+    enabled: true
+  javascript:
+    enabled: false
+  css:
+    enabled: false
+  symfony.verbose_logging_in_production:
+    enabled: true

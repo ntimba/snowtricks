@@ -1,0 +1,552 @@
+/* à intégrer direcemtent dnas le html */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #C5004F;
+    --secondary-color: #011D35;
+
+    --color-background-light: #ebebea;
+    --color-background-primary: #FDFFFE;
+    --font-family-primary: "Oswald", sans-serif;
+    --link-font-size: 1.1rem;
+    --navigation-font-family: "Lato", sans-serif;
+    --primary-font-family: "Lato", sans-serif;
+    --secondary-font-family: "Oswald", sans-serif;
+    --card-font-family: "Lato", sans-serif;
+}
+
+.title{
+    font-family: var(--primary-font-family);
+    font-weight: 800;
+    font-size: 2.3rem;
+}
+
+.text{
+
+}
+
+.__link{
+    color: var(--primary-color)
+}
+
+.__color-primary{
+    color: var(--primary-color) !important;
+}
+
+.form__widget{
+    border: 1px solid var(--secondary-color);
+    border-radius: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #011D35;
+
+}
+
+body{
+    background-color: var(--color-background-light);
+}
+
+.main-nav{
+    background-color: var(--color-background-primary);
+}
+
+.footer{
+    background-color: var(--color-background-primary);
+}
+
+.navigation__logo{
+    color: #C5004F;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+.navigation__logo img{
+    width: 100px;
+}
+
+
+.navigation__links__item a{
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: var(--navigation-font-family);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.navigation__links__item a:hover{
+    color: var(--primary-color);
+}
+
+
+.hero, .hero--trick{
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+
+.hero--trick__overlay, .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero--trick__overlay{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero__heading {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; 
+    z-index: 3;
+}
+
+.hero__heading__title{
+    position: relative;
+    color: #FDFFFE;
+    font-size: 13vw;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    opacity: 0.1;
+}
+
+.hero__heading__subtitle{
+    position: relative;
+    /* top: -100px; */
+    font-family:  "Lato", sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: var(--color-background-light);
+}
+
+.hero--trick__heading__subtitle{
+    font-size: 2rem;
+    color: var(--color-background-primary)
+}
+
+.hero__heading__title {
+    position: relative; 
+    /* display: inline-block;  */
+    /* z-index: 2;  */
+}
+
+
+
+/* 
+ * Les cards
+ */
+.card{
+    border: none;
+    border-radius: 0;
+}
+
+.card img{
+    border-radius: 0;
+    object-fit: cover;
+    height: 200px;
+}
+
+.card__image{
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card__image img{
+    height: 100%;
+    object-fit: 100%;
+}
+
+.trick-media__card__image{
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.trick-media__card__image img,.trick-media__card__image iframe{
+    height: 100%;
+    object-fit: 100%;
+}
+
+iframe{
+    width: 100%;
+}
+
+.card-title a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-family: var(--font-family-primary)
+}
+
+.card__meta__groupname{
+    position: absolute;
+    bottom: -1rem;
+    left: 0rem;
+}
+
+.card__meta__groupname p{
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    color: #FDFFFE;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+.card-body__content{
+
+}
+
+.card__utils__link {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+/* Scroll button */
+#myTopButton {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 0px;
+  }
+  
+#myTopButton, #myDownButton:hover {
+    /* background-color: #c27694; */
+  }
+
+#myDownButton{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 0px;
+}
+
+/* .desktop-nav{
+    border: 2px solid green;
+    box-shadow: 1px 1px 4px black;
+} */
+
+
+
+.tricks{
+    padding-bottom: 30px;
+    background-color: var(--color-background-light);
+}
+
+@media (min-width: 768px) {
+
+    .hero__logo{
+        display: none;
+    }
+
+    .main-nav{
+        padding: 1.5rem;
+        margin: 0;
+    }
+
+    .main-nav__content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navigation__links{
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        /* justify-content: space-around; */
+    }
+
+    .navigation__links__item i{
+        display: none;
+    }
+
+    .see-media{
+        display: none;
+    }
+
+    .media-list{
+        padding: 5rem 3rem;
+    }
+}
+
+
+/* Version Mobile */
+@media (max-width: 768px) {
+    .main-nav{
+        margin-top: 20px;
+        padding-top: 1.5rem;
+        background-color: var(--color-background-primary);
+        position: fixed;
+        bottom: 0;
+        /* margin-bottom: 20px; */
+        width: 100%;
+        z-index: 1;
+        box-shadow: 1px 1px 4px black;  
+    }
+
+    .navigation__logo{
+        color: var(--color-background-primary);
+    }
+
+    .main-nav .logo{
+        display: none;
+    }
+
+    .navigation__links{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navigation__links__item span{
+        display: none;
+    }
+    
+    .main-nav .navigation__links__item a{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .hero__logo{
+        position: absolute;
+        top: 10px;
+        z-index: 1;
+    }
+
+
+    .hero--trick{
+        height: 20vh;
+    }
+
+    .button--load-more{
+        margin: 6rem 0rem;
+    }
+
+    .footer{
+        display: none;
+    }
+
+    .trick-media{
+        display: none;
+    }
+}
+
+
+/* les button */
+.button, .btn{
+    background-color: var(--primary-color);
+    color: var(--color-background-primary);
+    border: none;
+    border-radius: 0px;
+    font-size: 1.2rem;
+    /* padding: 0.6rem 1rem; */
+    padding: 1rem;
+    font-family: var(--font-family-primary);
+    font-weight: 300;
+}
+
+.btn:hover{
+    background-color: var(--secondary-color) !important;
+}
+
+
+.button:hover, .btn:hover{
+    background-color: var(--secondary-color) !important;
+}
+
+.button--load-more span{
+    margin-right: 10px;
+}
+ 
+
+/* Footer */
+.footer{
+    color: var(--secondary-color);
+}
+ 
+
+/*          LOGIN PAGE
+ *
+ */
+.login-form{
+    background-color: var(--color-background-primary);
+}
+
+
+/* Slider */
+/* slider trick */
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+      display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+      display: block;
+    }
+  }
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+  
+  /* medium and up screens */
+  @media (min-width: 768px) {
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+  }
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start {
+    transform: translateX(0);
+  }
+  
+  .trick-modify {
+    list-style: none;
+    padding: 0;
+  }
+  
+
+
+.comment-form{
+    padding: 2rem;
+    background-color: var(--color-background-primary);
+}
+
+.trick .container{
+    background-color: var(--color-background-primary);
+}
+
+.trick__meta{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    border-bottom: 1px solid var(--color-background-light);
+    padding-bottom: 1rem;
+}
+
+.trick__meta li{
+    display: flex;
+    gap: 0.6rem;
+}
+
+
+.comment{
+    border-bottom: 1px solid var(--color-background-light);
+}
+
+.user__profile{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.user__profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment__content{
+}
+
+.comment__meta{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-photo{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.trick-media{
+    background-color: var(--color-background-light);
+}
+
+.__background--primary{
+    background-color: var(--secondary-color);
+    color: var(--color-background-primary);
+}
+
+.__background--primary:hover{
+    background-color: var(--primary-color);
+    color: var(--color-background-primary);
+}
+
+.trick__utils{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3 ;
+}
+
+.trick__utils__link {
+    text-decoration: none;
+    color: var(--color-background-primary);
+    font-size: 1.2rem;
+}
+
+
+fieldset {
+    display: none;
+}
+
+#add-photo, #add-video{
+    margin-top:1rem;
+}
