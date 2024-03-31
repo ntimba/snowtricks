@@ -51,12 +51,12 @@ class SecurityController extends AbstractController
     }
 
     #[Route('/login', name: 'login')]
-    public function login()
+    public function login(): void
     {
     }
 
     #[Route('/verify/email', name: 'verify_email')]
-    public function verifyEmail(Request $request, TokenService $tokenService, TokenRepository $tokenRepository, UrlGeneratorInterface $router)
+    public function verifyEmail(Request $request, TokenService $tokenService): Response
     {
         $tokenFromUrl = $request->query->get('token');
 

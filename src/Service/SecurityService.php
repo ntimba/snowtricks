@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Entity\Token;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\RouterInterface;
@@ -69,7 +70,7 @@ class SecurityService
      * @param [type] $token
      * @return void
      */
-    public function sendConfirmationEmail(User $user, $token): void
+    public function sendConfirmationEmail(User $user, Token $token): void
     {
         $confirmationUrl = $this->router->generate('verify_email', ['token' => $token->getToken()], UrlGeneratorInterface::ABSOLUTE_URL);
         $this->emailService->sendEmail(

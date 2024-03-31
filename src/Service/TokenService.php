@@ -104,7 +104,7 @@ class TokenService
      * @param [type] $tokenType
      * @return Token
      */
-    public function createToken(User $user, $tokenType): Token
+    public function createToken(User $user, string $tokenType): Token
     {
         $token = new Token();
         $token->setUserToken($user);

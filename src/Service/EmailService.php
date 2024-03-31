@@ -53,18 +53,4 @@ class EmailService
             throw $e;
         }
     }
-
-    /**
-     * Génère le corps de l'e-mail à partir d'un template
-     *
-     * @param string $templatePath Chemin du template
-     * @param array $parameters Paramètres pour le template
-     * @return string Le contenu de l'email généré
-     */
-    private function mailBody(string $templatePath, array $parameters): string
-    {
-        $emailContent = $this->twig->render($templatePath, $parameters);
-
-        return $emailContent;
-    }
 }
