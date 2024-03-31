@@ -8,12 +8,19 @@ use App\Traits\TimestampableTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USERNAME', fields: ['username'])]
+#[UniqueEntity(
+    fields: ['username'],
+    message: 'Le nom d \'utilisateur "{{ value }}" est déjà utilisé'
+)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface, TimestampableInterface
 {
     use TimestampableTrait;
@@ -24,6 +31,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Timesta
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Assert\NotBlank(message: 'Le nom d\'utilisateur ne peut pas être vide.')]
     private ?string $username = null;
 
     /**
@@ -36,15 +44,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Timesta
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\Length(min: 6, minMessage: 'Votre mot de passe doit avoir au minimum {{ limit }} caractères.')]
+    #[Assert\NotBlank(message: 'Le mot de passe ne peut pas être vide.')]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Email(message: 'L\'adresse {{ value }} n\'est pas valide.')]
+    #[Assert\NotBlank(message: 'L\'adressee e-mail ne peut pas être vide.')]
     private ?string $email = null;
 
     #[ORM\Column]
     private ?bool $emailVerified = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, options: ["default" => "/images/profile.png"])]
     private ?string $profileImage = null;
 
     #[ORM\OneToMany(targetEntity: Trick::class, mappedBy: 'userTrick')]

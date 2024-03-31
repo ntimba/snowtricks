@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mb-5">
+            <div class="hero__logo mt-4">
+                <a href="#" class="navigation__logo __color-primary" >SNOWTRICKS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register -->
+    <div class="container">
+
+        {# Flash message #}
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="ps-5 pe-5 pt-5">
+                    <div class="alert {% if type == 'success'%}alert-success{% elseif type == 'warning' %}alert-warning{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="login-form p-5 mt-5 mb-5">
+                    <div class="mb-5">
+                        <h1 class="title mb-4">Inscription</h1>
+                        <p>Rejoignez la communauté SnowTricks ! Créez votre compte pour découvrir et partager des figures de snowboard. L'inscription est rapide et vous ouvre les portes d'une communauté passionnée par le snowboard. Prêt à glisser dans l'aventure ?</p>
+                    </div>
+
+                    {{ form_start(form) }}
+                        <div>
+                            {{ form_label(form.username) }}
+                            {{ form_widget(form.username) }}
+                            {{ form_errors(form.username) }}
+                        </div>
+                        <div>
+                            {{ form_label(form.email) }}
+                            {{ form_widget(form.email) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                        <div>
+                            {{ form_label(form.password) }}
+                            {{ form_widget(form.password) }}
+                            {{ form_errors(form.password) }}
+                        </div>
+                        <button type="submit" class="button w-100 mt-4">S'enregistrer</button>
+                    {{ form_end(form) }}
+
+                    <div class="mt-4">
+                        <p>Vous avez déjà un compte ? <a href="{{ path('login') }}" class="__link">connectez-vous</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

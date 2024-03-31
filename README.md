@@ -11,4 +11,4 @@ faire la migration des classes avec la commande :
 `symfony console make:migration`
 
 Créer les tables avec la commande
-`symfony console doctrine:migrations:migrate`
+`symfony console doctrine:migration:migrate`
