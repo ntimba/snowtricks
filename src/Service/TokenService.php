@@ -143,6 +143,10 @@ class TokenService
         $this->validateToken($tokenFromUrl);
 
         $token = $this->tokenRepository->findOneBy(['token' => $tokenFromUrl]);
+        if (!$token) {
+            // Lancer une exception si le token est vide
+            throw TokenInvalidException::notFound();
+        }
         $this->ensureTokenIsValid($token);
 
         $user = $token->getUserToken();

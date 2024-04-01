@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mb-5">
+            <div class="hero__logo mt-4">
+                <a href="#" class="navigation__logo __color-primary" >SNOWTRICKS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register -->
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="login-form p-5 mt-5 mb-5">
+                    <div class="mb-5">
+                        <h1 class="title mb-4">Connexion</h1>
+                        <p>Connectez-vous à la communauté SnowTricks pour découvrir et partager des figures de snowboard. Rejoignez une communauté passionnée en un clin d'œil. Prêt pour l'aventure ?</p>
+                    </div>
+
+                    <form action="{{ path('login') }}" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nom d'utilisateur</label>
+                            <input name="_username" value="{{ username }}" type="text" class="form-control form__widget" id="username" placeholder="pseudo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input name="_password" type="password" class="form-control form__widget" id="password" placeholder="password">
+                        </div>
+
+                        <button type="submit" class="button w-100">Connexion</button>
+                    </form>
+
+                    <div class="mt-4">
+                        <p>Pas encore de compte ? <a href="{{ path('registration') }}" class="__link">inscrivez-vous</a></p>
+                        <p>Vous avez oublié votre mot de passe ? <a href="#" class="__link">récupérer mon compte</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
