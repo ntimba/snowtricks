@@ -19,7 +19,7 @@ class TokenInvalidException extends Exception
 
     public static function notFound(): self
     {
-        return new self("Pas de token trouvé dans la base de données.");
+        return new self("Le token fourni n'existe pas ou est invalide.");
     }
 
     public static function linkedToNoUser(): self
