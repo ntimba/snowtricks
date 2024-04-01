@@ -35,8 +35,6 @@ class TimestampableListener
         $entity->setCreatedAt(new \DateTimeImmutable());
     }
 
-
-
     /**
      * Callback method executred before an entity is updated
      *

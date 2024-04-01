@@ -11,4 +11,7 @@ faire la migration des classes avec la commande :
 `symfony console make:migration`
 
 Créer les tables avec la commande
-`symfony console doctrine:migrations:migrate`
+`symfony console doctrine:migration:migrate`
+
+Pour la reception des mail, il faut configurer le fichier .env et ajouter les informations de MAILER_DSN
+MAILER_DSN=smtp://c54**\*\*\***:d\*\*\*\*@sandbox.smtp.mailtrap.io:2525
